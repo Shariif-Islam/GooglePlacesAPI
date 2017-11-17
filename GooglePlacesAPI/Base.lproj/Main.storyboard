@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abY-Th-8BA">
+                                <rect key="frame" x="0.0" y="30" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6jY-zG-kvQ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="location" id="lGs-bG-CE9">
+                                        <connections>
+                                            <action selector="findAddress:" destination="BYZ-38-t0r" id="lNu-rP-tgl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T59-OP-HKA"/>
+                                    <barButtonItem image="directions" id="NrF-tu-a24">
+                                        <connections>
+                                            <action selector="createRoute:" destination="BYZ-38-t0r" id="uuN-Cl-B0j"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="NYS-Ac-5bn"/>
+                                    <barButtonItem image="steering_wheel" id="43a-2o-BAv">
+                                        <connections>
+                                            <action selector="changeTravelMode:" destination="BYZ-38-t0r" id="Irt-bl-Utx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0em-f9-3Sp"/>
+                                    <barButtonItem image="map" id="SKF-yu-ao2">
+                                        <connections>
+                                            <action selector="changeMapType:" destination="BYZ-38-t0r" id="IGf-d9-CB6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.2901960784" green="0.65098039220000004" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRo-Lf-xQo">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.65098039220000004" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vF4-5Y-Mt9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJq-eJ-beT" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="74" width="375" height="549"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="abY-Th-8BA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="6U3-F9-gZ5"/>
+                            <constraint firstAttribute="trailing" secondItem="hJq-eJ-beT" secondAttribute="trailing" id="9ry-r7-F3W"/>
+                            <constraint firstItem="abY-Th-8BA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CUo-5o-4iY"/>
+                            <constraint firstAttribute="trailing" secondItem="abY-Th-8BA" secondAttribute="trailing" id="MWe-hv-Vb6"/>
+                            <constraint firstItem="oRo-Lf-xQo" firstAttribute="top" secondItem="hJq-eJ-beT" secondAttribute="bottom" id="O5m-BQ-4B1"/>
+                            <constraint firstItem="hJq-eJ-beT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XdK-vX-E9F"/>
+                            <constraint firstItem="oRo-Lf-xQo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yxn-uA-N7I"/>
+                            <constraint firstItem="hJq-eJ-beT" firstAttribute="top" secondItem="abY-Th-8BA" secondAttribute="bottom" id="j33-gv-9L1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oRo-Lf-xQo" secondAttribute="bottom" id="nBN-bO-LGY"/>
+                            <constraint firstAttribute="trailing" secondItem="oRo-Lf-xQo" secondAttribute="trailing" id="oCH-mm-1nt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn_findAddress" destination="lGs-bG-CE9" id="Zul-wH-EQn"/>
+                        <outlet property="lb_info" destination="oRo-Lf-xQo" id="ZxA-aB-bRD"/>
+                        <outlet property="v_map" destination="hJq-eJ-beT" id="OcO-rl-fG7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="directions" width="25" height="25"/>
+        <image name="location" width="25" height="25"/>
+        <image name="map" width="25" height="25"/>
+        <image name="steering_wheel" width="25" height="25"/>
+    </resources>
+</document>
